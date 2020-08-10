@@ -1,0 +1,16 @@
+---
+applications:
+- name: spring-scheduled
+  memory: 1G
+  instances: 2
+  buildpack: java_buildpack_offline
+  random-route: true
+  path: spring-scheduled/target/spring-scheduled-0.0.1-SNAPSHOT.jar
+- name: pcf-scheduler
+  memory: 1G
+  instances: 2
+  buildpack: java_buildpack_offline
+  random-route: true
+  path: pcf-scheduler/target/pcf-scheduler-0.0.1-SNAPSHOT.jar
+  services:
+  - scdf-scheduler
